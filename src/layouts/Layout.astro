@@ -89,6 +89,11 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta property="og:image" content="/opengraph-share.png"/>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@furioursus" />
+		<meta name="twitter:creator" content="@furioursus" />
+
 	</head>
 	<body>
 		<Navigation />
