@@ -1,0 +1,96 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<style is:global>
+	:root {
+		--color-black: #000;
+		--color-white: #fff;
+		--color-line-123: #EE352E;
+		--color-line-456: #00933C;
+		--color-line-NQRW: #FCCC0A;
+		--color-line-BDFM: #FF6319;
+		--color-line-JZ: #996633;
+		--color-line-ACE: #0039A6;
+		--color-line-1: var(--color-line-123);
+		--color-line-2: var(--color-line-123);
+		--color-line-3: var(--color-line-123);
+		--color-line-4: var(--color-line-456);
+		--color-line-5: var(--color-line-456);
+		--color-line-6: var(--color-line-456);
+		--color-line-7: #B933AD;
+		--color-line-A: var(--color-line-ACE);
+		--color-line-B: var(--color-line-BDFM);
+		--color-line-C: var(--color-line-ACE);
+		--color-line-D: var(--color-line-BDFM);
+		--color-line-E: var(--color-line-ACE);
+		--color-line-F: var(--color-line-BDFM);
+		--color-line-G: #6CBE45;
+		--color-line-H: #FF6319;
+		--color-line-J: var(--color-line-JZ);
+		--color-line-L: #A7A9AC;
+		--color-line-M: var(--color-line-BDFM);
+		--color-line-N: var(--color-line-NQRW);
+		--color-line-Q: var(--color-line-NQRW);
+		--color-line-R: var(--color-line-NQRW);
+		--color-line-S: #808183;
+		--color-line-T: #00ADD0;
+		--color-line-W: var(--color-line-NQRW);
+		--color-line-Z: var(--color-line-JZ);
+		--side-margin: 1rem;
+		--max-width: 65ch;
+	}
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+	html {
+		font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+		background-color: var(--color-black);
+		color: var(--color-white);
+		font-weight: 300;
+		line-height: 1.5;
+	}
+	@media (min-width: 768px) {
+		html {
+			font-size: 1.25rem;
+		}
+	}
+	@media (min-width: 1024px) {
+		html {
+			font-size: 1.5rem;
+		}
+	}
+	
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+	.wrapper {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: var(--side-margin);
+		padding-right: var(--side-margin);
+		max-width: var(--max-width);
+	}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Navigation />
+		<slot />
+		<Footer />
+	</body>
+</html>

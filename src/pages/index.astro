@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomeIntro from '../components/HomeIntro.astro';
+import TransitCard from '../components/TransitCard.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<div class="wrapper">
+		<main>
+			<HomeIntro />
+			<section class="hero accent accent__line-M">
+				<h2 class="hero__title">i make <span>great websites</span> with <br><span>amazing people</span>.</h2>
+				<div class="hero__content">
+					<p>I’ve worked on projects ranging from small boutique websites to ecom­merce solutions for national food brands, to building a webapp for the <a href="https://access.nyc.gov">City of New York</a> while working with <a href="https://bluestate.co">Blue State</a>, to most recently stewarding and maintaining the <a href="https://www.oaklandca.gov">City of Oakland’s Website</a>.</p>
+					<p>In every instance, I’ve enjoyed focusing on information architecture as well as the minutae of front-end development. If you’d like to see my work, reach out to me.</p>
+				</div>
+			</section>
+			<section class="hero accent accent__line-Q">
+				<h2 class="hero__title">i’m online a lot. <br>like <span>a lot</span> a lot.</h2>
+				<div class="hero__content">
+					<p>i’ve loved the promise of the internet since i was a teenager in the ‘90s. With <a href="https://thestrand.ca/desire-for-profitability-drives-twitters-steep-decline/">Twitter’s steady decline</a>, i’ve started focusing on owning my own content and have found an interest in reclaiming where i post.</p>
+				</div>
+				<ul class="transit-cards">
+					<TransitCard
+						href="https://queer.dev/@furioursus"
+						title="Mastodon"
+						body="The best place to follow me for updates and to get in touch on social media."
+						color="var(--color-line-M)"/>
+					<TransitCard
+						href="https://www.twitter.com/furioursus"
+						title="Twitter"
+						body="My old microblog of choice before Elon Musk ruined the whole thing."
+						color="var(--color-line-T)"/>
+					<TransitCard
+						href="https://www.flickr.com/onebrightlight"
+						title="Flickr"
+						body="i enjoy taking photos lately as it’s a rewarding activity that i want to rediscover."
+						color="var(--color-line-F)"/>
+					<TransitCard
+						href="https://www.github.com/onebrightlight"
+						title="GitHub"
+						body="There’s bound to be some code here, but most of it’s private. Still, here i am!"
+						color="var(--color-line-G)"/>
+				</ul>
+			</section>
+		</main>	
+	</div>
+</Layout>
+<style>
+	.transit-cards {
+		margin-top: 2rem;
+		padding-left: 0;
+	}
+	.hero {
+		margin-top: 2.5rem;
+	}
+	.hero__title {
+		font-size: 1.25rem;
+		line-height: 1;
+		margin-bottom: .5rem;
+		padding-bottom: .5rem;
+		border-bottom: .125rem solid var(--color-line-L);
+	}
+	@media (min-width: 768px) {
+		.hero__title {
+			font-size: 1.5rem;
+			margin-bottom: .75rem;
+			padding-bottom: .75rem;
+		}
+	}
+	@media (min-width: 1024px) {
+		.hero__title {
+			font-size: 2rem;
+		}
+	}
+	@media (min-width: 1280px) {
+		.hero__title {
+			font-size: 2.25rem;
+		}
+	}
+	.hero__content *:first-child {
+		margin-top: 0;
+	}
+	.accent__line-M {
+		--accent-color: var(--color-line-M);
+	}
+	.accent__line-Q {
+		--accent-color: var(--color-line-Q);
+	}
+	[class*="accent__line-"] h2 span,
+	[class*="accent__line-"] a {
+		color: var(--accent-color);
+	}
+	[class*="accent__line-"] a {
+		font-weight: 500;
+	}
+</style>

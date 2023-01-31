@@ -1,0 +1,78 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+	color: string;
+}
+
+const { href, title, body, color } = Astro.props;
+const letter = title[0].toUpperCase();
+---
+
+<li>
+	<a class="transit-card" href={href}>
+		<div class="transit-card__letter">{letter}</div>
+		<div class="transit-card__content">
+			<h3 class="transit-card__title">{title}</h3>
+			<p class="transit-card__body">{body}</p>
+		</div>
+	</a>
+</li>
+
+<style define:vars={{ color }}>
+	li {
+		list-style: none;
+		border-top: 1px solid var(--color-white);
+		padding-top: .25rem;
+	}
+	li:hover {
+		background-color: var(--color-white);
+		border-top: 1px solid var(--color-black);
+		color: var(--color-black);
+	}
+	.transit-card {
+		display: flex;
+		color: var(--color-white);
+		padding-bottom: 1rem;
+		text-decoration: none;
+		gap: .625rem;
+		width: 100%;
+	}
+	li:hover .transit-card {
+		color: var(--color-black);
+	}
+	.transit-card__letter {
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 100%;
+		font-size: 1.5rem;
+		font-weight: 500;
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--color);
+	}
+	.transit-card__content {
+		display: flex;
+		flex-grow: 1;
+		justify-content: space-between;
+		gap: .625rem;
+	}
+	.transit-card__title {
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin: 0;
+	}
+	.transit-card__body {
+		font-size: .825rem;
+		width: 10rem;
+		margin: 0;
+	}
+	@media (min-width: 768px) {
+		.transit-card__body {
+			width: 15rem;
+		}
+	}
+</style>

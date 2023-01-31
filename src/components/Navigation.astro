@@ -1,0 +1,50 @@
+<div class="wrapper">
+	<nav>
+		<a class="site-title" href="/" title="Home">One Bright Light</a>
+		<div id="menu" class="menu">
+			<ul>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/blog">Blog</a></li>	
+			</ul>
+		</div>
+		<!-- <button id="menu-toggle" class="menu-toggle">Menu</button> -->
+	</nav>	
+</div>
+
+<style>
+	nav {
+		border-top: .25rem solid var(--color-white);
+		margin-bottom: 2.5rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	.site-title {
+		color: var(--color-white);
+		font-size: 1.25rem;
+		font-weight: 500;
+		text-decoration: none;
+		line-height: 2rem;
+	}
+	.menu {
+		display: none;
+		position: absolute;
+		inset: 0;
+		background-color: var(--color-line-123);
+		height: 100vh;
+	}
+	.menu-toggle {
+		height: 2rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		font-size: 1.125rem;
+		background-color: var(--color-line-123);
+		color: var(--color-white);
+		border: none;
+		appearance: none;
+		margin: 0;
+	}
+	.menu-toggle:hover {
+		cursor: pointer;
+		background-color: var(--color-line-H);
+	}
+</style>
